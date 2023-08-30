@@ -1,257 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        /* http://meyerweb.com/eric/tools/css/reset/ 
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-        html,
-        body,
-        div,
-        span,
-        applet,
-        object,
-        iframe,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        blockquote,
-        pre,
-        a,
-        abbr,
-        acronym,
-        address,
-        big,
-        cite,
-        code,
-        del,
-        dfn,
-        em,
-        img,
-        ins,
-        kbd,
-        q,
-        s,
-        samp,
-        small,
-        strike,
-        strong,
-        sub,
-        sup,
-        tt,
-        var,
-        b,
-        u,
-        i,
-        center,
-        dl,
-        dt,
-        dd,
-        ol,
-        ul,
-        li,
-        fieldset,
-        form,
-        label,
-        legend,
-        table,
-        caption,
-        tbody,
-        tfoot,
-        thead,
-        tr,
-        th,
-        td,
-        article,
-        aside,
-        canvas,
-        details,
-        embed,
-        figure,
-        figcaption,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        output,
-        ruby,
-        section,
-        summary,
-        time,
-        mark,
-        audio,
-        video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
+			:root {
+				--color-primary: #030821;
+				--bg-color-nearwhite: #edf1f7;
+			}
 
-        /* HTML5 display-role reset for older browsers */
-        article,
-        aside,
-        details,
-        figcaption,
-        figure,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        section {
-            display: block;
-        }
+			html,
+			body,
+			div,
+			span,
+			applet,
+			object,
+			iframe,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			blockquote,
+			pre,
+			a,
+			abbr,
+			acronym,
+			address,
+			big,
+			cite,
+			code,
+			del,
+			dfn,
+			em,
+			img,
+			ins,
+			kbd,
+			q,
+			s,
+			samp,
+			small,
+			strike,
+			strong,
+			sub,
+			sup,
+			tt,
+			var,
+			b,
+			u,
+			i,
+			center,
+			dl,
+			dt,
+			dd,
+			ol,
+			ul,
+			li,
+			fieldset,
+			form,
+			label,
+			legend,
+			table,
+			caption,
+			tbody,
+			tfoot,
+			thead,
+			tr,
+			th,
+			td,
+			article,
+			aside,
+			canvas,
+			details,
+			embed,
+			figure,
+			figcaption,
+			footer,
+			header,
+			hgroup,
+			menu,
+			nav,
+			output,
+			ruby,
+			section,
+			summary,
+			time,
+			mark,
+			audio,
+			video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
 
-        body {
-            line-height: 1;
-            font-family: inter;
-        }
+			/* HTML5 display-role reset for older browsers */
+			article,
+			aside,
+			details,
+			figcaption,
+			figure,
+			footer,
+			header,
+			hgroup,
+			menu,
+			nav,
+			section {
+				display: block;
+			}
 
-        ol,
-        ul {
-            list-style: none;
-        }
+			body {
+				line-height: 1;
+				font-family: inter;
+			}
 
-        blockquote,
-        q {
-            quotes: none;
-        }
+			ol,
+			ul {
+				list-style: none;
+			}
 
-        blockquote:before,
-        blockquote:after,
-        q:before,
-        q:after {
-            content: '';
-            content: none;
-        }
+			blockquote,
+			q {
+				quotes: none;
+			}
 
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        *,
-        ::before,
-        ::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+			blockquote:before,
+			blockquote:after,
+			q:before,
+			q:after {
+				content: "";
+				content: none;
+			}
 
-        header {
-            background-color: #030E42;
-            padding: 2rem 1rem;
-            border-bottom: 1px solid grey;
-        }
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
 
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            color: white;
-        }
+			*,
+			::before,
+			::after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-        .nav-link {
-            display: flex;
-        }
+			img {
+				width: 100%;
+				height: 100%;
+			}
 
-        .nav-link li a {
-            color: white;
-            text-decoration: none;
-        }
+			a {
+				text-decoration: none;
+			}
 
-        .nav-link li + li {
-            margin-left: 1rem;
-        }
+			/* 
+                NAVIGATION SECTION
+            */
 
-        
+			header {
+				background-color: var(--color-primary);
+				padding: 2rem 1rem;
+				border-bottom: 0.3px solid grey;
+			}
 
+			.nav {
+				display: flex;
+				justify-content: space-between;
+				color: white;
+			}
 
-    </style>
-</head>
+			.nav-link {
+				display: flex;
+			}
 
-<body>
-    <header>
-        <nav class="nav">
-            <div>Ibrahim Joseph</div>
-            <ul class="nav-link">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Projects</a>
-                </li>
-                <li>
-                    <a href="#">Socials</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <div>
-                <img src="" alt="">
-            </div>
-            <div>
-                <h1>About me</h>
-            </div>
-            <div>
-                my story
-            </div>
-        </section>
-        <section>
-            <h2>Companies I have worked with</h2>
-            <div>
-                <div>company</div>
-                <div>company 2</div>
-                <div>company 3</div>
-                <div>company 4</div>
-            </div>
-        </section>
-        <section>
-            <h2>Word on mable</h2>
-            <div>
-                <div>person 1</div>
-                <div>person 2</div>
-                <div>person 3</div>
-            </div>
-        </section>
-        <section>
-            <h2>Community work</h2>
-            <div>
-                <div>community 1</div>
-                <div>community 2</div>
-                <div>community 3</div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <section>
-            <div>
-                Let's connect on socials
-            </div>
-            <div>
-                <div>Linkedin</div>
-                <div>Twitter</div>
-                <div>Github</div>
-                <div>Instagram</div>
-            </div>
-        </section>
-    </footer>
-</body>
+			.nav-link li a {
+				color: white;
+				text-decoration: none;
+			}
 
+			.nav-link li + li {
+				margin-left: 1rem;
+			}
+
+			.about {
+				background-color: var(--color-primary);
+				color: white;
+				padding: 1rem;
+				display: grid;
+			}
+
+			/* 
+                ABOUT SECTION
+            */
+
+			.about__text {
+				order: 1;
+				margin-bottom: 5rem;
+				margin-top: 2rem;
+				grid-area: a;
+			}
+
+			.about__text h1,
+			.about__text p {
+				font-size: 2.25rem;
+				font-weight: 400;
+				line-height: 1.2;
+			}
+			.about__image {
+				order: 2;
+				grid-area: b;
+			}
+
+			.about__description {
+				order: 3;
+				margin: 5rem 0;
+				grid-area: c;
+			}
+
+			.about__description p {
+				font-size: 1.195rem;
+				font-weight: 200;
+				line-height: 1.6;
+			}
+
+			.company {
+				background-color: var(--bg-color-nearwhite);
+				padding: 2rem 1rem;
+			}
+
+			.company h2 {
+				font-size: 2rem;
+				line-height: 1.2;
+			}
+
+			.company h3 {
+				margin: 0.3rem 0;
+				font-weight: 600;
+			}
+			.company_content {
+				margin: 2rem 0;
+			}
+
+			.company_content p {
+				line-height: 1.5;
+			}
+
+			.company__logo {
+				width: 100px;
+			}
+
+			.community {
+				background-color: rgb(228, 241, 253);
+				padding: 3rem 1rem;
+			}
+
+			.community h2 {
+				font-size: 2rem;
+				line-height: 1.2;
+				margin-bottom: 2.5rem;
+			}
+
+			.community__1,
+			.community__2,
+			.community__3 {
+				height: 420px;
+				position: relative;
+				margin-bottom: 4rem;
+			}
+
+			.community__1 img,
+			.community__2 img,
+			.community__3 img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: flex;
+			}
+
+			.community__1 p,
+			.community__2 p,
+			.community__3 p {
+				font-weight: 800;
+				color: white;
+				position: absolute;
+				right: 20px;
+				top: 20px;
+			}
+
+			.footer {
+				background-color: var(--color-primary);
+				color: gainsboro;
+				font-weight: 200;
+				font-size: 1.7rem;
+				line-height: 1.3;
+				padding: 1rem;
+				position: relative;
+			}
+
+			footer {
+				position: relative;
+			}
+
+			.blur {
+				z-index: 0;
+				height: 100%;
+				width: 100px;
+				position: absolute;
+				background-image: linear-gradient(60deg, blue, lightblue);
+				filter: blur(100px);
+				opacity: 0.6;
+			}
+
+			.footer__link {
+				border-top: 0.2px solid grey;
+			}
+
+			.footer__link a {
+				display: block;
+				color: gainsboro;
+				padding: 3rem 0px;
+				padding-bottom: 1rem;
+				z-index: 2;
+			}
+
+			.footer__link a:hover {
+				border-left: 7px solid grey;
+			}
+
+			.footer__h2 {
+				padding: 3rem 0;
+				z-index: 2;
+			}
+
+			@media (min-width: 768px) {
+				.footer {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					padding-top: 0px;
+				}
+				.footer__h2 {
+					border-right: 0.3px solid grey;
+				}
+				.footer__link a {
+					padding-left: 3rem;
+					font-size: 1rem;
+				}
+
+				.community__container {
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+					grid-gap: 2rem;
+				}
+
+				.company__container {
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr 1fr;
+					grid-gap: 6rem;
+				}
+
+				.company {
+					padding: 8rem 5rem;
+				}
+
+				.about {
+					min-height: 75vh;
+					grid-template-areas:
+						"b b a"
+						"b b c"
+						"b b c";
+
+                        grid-gap: 2rem;
+                        padding: 8rem;
+				}
+
+                .about__image img {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                }
+
+                .about__text h1, .about__text p {
+                    font-size: 3rem;
+                }
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<nav class="nav">
+				<div>Ibrahim Joseph</div>
+				<ul class="nav-link">
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#">Projects</a>
+					</li>
+					<li>
+						<a href="#">Socials</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section class="about">
+				<div class="about__image">
+					<img
+						src="https://ibrahimjoseph.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdy8mjaeig%2Fimage%2Fupload%2Fv1675913124%2Fibrahim_site%2Fibrahim_joseph_hemlcl.jpg&w=1920&q=75"
+						alt=""
+					/>
+				</div>
+				<div class="about__text">
+					<h1>Engineer</h1>
+					<p>Content creator,</p>
+					<p>I love helping people to learn coding</p>
+				</div>
+				<div class="about__description">
+					<p>
+						Once upon a time, in a quaint town nestled between rolling hills and
+						shimmering lakes, lived a young boy named Ibrahim. From a tender
+						age, Ibrahim displayed an insatiable curiosity and an extraordinary
+						knack for creating wonders with his hands. His room was a treasure
+						trove of handcrafted contraptions and whimsical inventions that
+						captured the imagination of anyone who saw them. Yet, amidst his
+						intricate structures, Ibrahim held an unspoken love for music. As he
+						grew older, this love bloomed into a passion for producing melodies
+						that resonated with the soul. Armed with his trusty synthesizer,
+						Ibrahim delved into the world of music production, infusing his
+						mechanical ingenuity into the beats he crafted. His unique sound
+						soon captured the attention of music aficionados far and wide,
+						propelling him into a successful career as a music producer.
+					</p>
+					<p>
+						However, life is a symphony of unpredictable notes. As technology
+						advanced, Ibrahim found himself drawn to the digital realm.
+						Fascinated by the potential of code and algorithms, he decided to
+						channel his creativity into the world of software engineering. His
+						days of building intricate devices paved the way for a seamless
+						transition into programming, where he harmonized his penchant for
+						problem-solving with his passion for creation. Through dedication
+						and perseverance, Ibrahim became a maestro of code, composing
+						elegant software solutions that echoed his artistic spirit. Though
+						his journey had evolved from crafting physical marvels to shaping
+						virtual landscapes, the melody of his beginnings as a music-loving
+						tinkerer still resonated in every line of code he wrote.
+					</p>
+				</div>
+			</section>
+			<section class="company">
+				<h2>Companies I have worked with</h2>
+				<div class="company__container">
+					<div class="company_content">
+						<div class="company__logo">
+							<img
+								src="https://uploads-ssl.webflow.com/62a8e0a73c6f5051e0c524e0/62a8e88fc57de91ee2103e41_spritz_logo.svg"
+								alt=""
+							/>
+						</div>
+						<h3>Spritz</h3>
+						<p>
+							The full-service app for residential cleaners to handle paperwork,
+							stay organized, and earn more.
+						</p>
+					</div>
+					<div class="company_content">
+						<div class="company__logo">
+							<img
+								src="https://www.vertex.com/wp-content/themes/vertex-theme/assets/images/logo/logo.png"
+								alt=""
+							/>
+						</div>
+						<h3>Vertex 2</h3>
+						<p>Hire The Top 1% of Software Engineers To Build Your Big Ideas</p>
+					</div>
+					<div class="company_content">
+						<div class="company__logo">
+							<img
+								src="https://uploads-ssl.webflow.com/6181d37aecad1d31f5e711fd/618c49c6f09b346100fab649_pyrse-wide-dark.svg"
+								alt=""
+							/>
+						</div>
+						<h3>Payourse</h3>
+						<p>All the tools you need to build on crypto</p>
+					</div>
+					<div class="company_content">
+						<div class="company__logo">
+							<img
+								src="https://decagon.institute/static/media/decagon.18e1e74149bf346e03ceb8c52e3b3177.svg"
+								alt=""
+							/>
+						</div>
+						<h3>Decagon</h3>
+						<p>
+							Become a world class Software Engineer, and attract high paying
+							jobs in just 6 months.
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- <section>
+				<h2>Word on mable</h2>
+				<div>
+					<div>person 1</div>
+					<div>person 2</div>
+					<div>person 3</div>
+				</div>
+			</section> -->
+			<section class="community">
+				<h2>Community work</h2>
+				<div class="community__container">
+					<div class="community__1">
+						<p>Calabar Tech Community</p>
+						<img
+							src="https://media.licdn.com/dms/image/C4D0BAQEx7jfH9WKAtA/company-logo_200_200/0/1674502801511?e=1701302400&v=beta&t=zy55XJ1_mXfRBrLc-9_v64JsF8GFuYuL9h66VK5CQcw"
+							alt=""
+						/>
+					</div>
+					<div class="community__2">
+						<p>Golang Community</p>
+						<img
+							src="https://w7.pngwing.com/pngs/403/502/png-transparent-golang-go-google-programming-language-systems-programming-golang-logo-3d-icon.png"
+							alt=""
+						/>
+					</div>
+					<div class="community__3">
+						<p>Decagon Community</p>
+						<img
+							src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-Da49qXqa6B2FM6DJaIlOQ.jpeg"
+							alt=""
+						/>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<section class="footer">
+				<div class="blur"></div>
+				<div class="footer__h2">Let's connect on socials</div>
+				<div>
+					<div class="footer__link">
+						<a href="https://www.linkedin.com/in/ibrahimjoseph/">Linkedin</a>
+					</div>
+					<div class="footer__link">
+						<a href="https://twitter.com/jagajastic">Twitter</a>
+					</div>
+					<div class="footer__link">
+						<a href="https://github.com/jagajastic">Github</a>
+					</div>
+					<div class="footer__link">
+						<a href="https://instagram.com/jagajastic">Instagram</a>
+					</div>
+				</div>
+			</section>
+		</footer>
+	</body>
 </html>
